@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nasza Historia ❤️</title>
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #170913;
+  color: #fff1f5;
+  text-align: center;
+}
+header {
+  padding: 20px;
+  color: #ffc1d7;
+  font-size: 23px;
+}
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  background: radial-gradient(circle, #742846, #170913 75%);
+}
+h1 {
+  font-size: clamp(40px, 8vw, 75px);
+  margin-bottom: 12px;
+}
+h2 { color: #ffb2cf; font-size: 34px; }
+p { line-height: 1.8; }
+.subtitle { color: #ffd0df; font-size: 19px; }
+button, .btn {
+  background: #ff78a8;
+  color: #260b1a;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 22px;
+}
+section { padding: 65px 20px; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1050px;
+  margin: auto;
+}
+.gallery img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #a54a71;
+  transition: transform .3s;
+}
+.gallery img:hover { transform: scale(1.04); }
+.letter {
+  display: none;
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #351528;
+  border: 1px solid #b65b83;
+  border-radius: 20px;
+  font-size: 19px;
+}
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: 10;
+}
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+footer { padding: 35px; color: #c999af; }
+</style>
+</head>
+<body>
+
+<header>♡ NASZA HISTORIA ♡</header>
+
+<div class="hero">
+  <div style="font-size:65px">💗</div>
+  <h1>Ty i ja.<br>Na zawsze w moim sercu.</h1>
+  <p class="subtitle">
+    Nie potrzebuję idealnego świata.<br>
+    Wystarczy, że jesteś w nim Ty.
+  </p>
+  <a class="btn" href="#zdjecia">Nasze wspomnienia ↓</a>
+</div>
+
+<section id="zdjecia">
+  <h2>📸 Nasze wspomnienia</h2>
+  <p>Każde zdjęcie przypomina mi, jak wiele dla mnie znaczysz.</p>
+  <div class="gallery">
+    <img src="zdjecie1.jpg" alt="Nasze wspomnienie 1">
+    <img src="zdjecie2.jpg" alt="Nasze wspomnienie 2">
+    <img src="zdjecie3.jpg" alt="Nasze wspomnienie 3">
+    <img src="zdjecie4.jpg" alt="Nasze wspomnienie 4">
+    <img src="zdjecie5.jpg" alt="Nasze wspomnienie 5">
+  </div>
+</section>
+
+<section>
+  <h2>💌 Mam coś dla Ciebie...</h2>
+  <p>To kilka słów prosto z mojego serca.</p>
+  <button onclick="openLetter()">Otwórz mój list ❤️</button>
+
+  <div class="letter" id="list">
+    <h2>Kochanie ❤️</h2>
+    <p>
+      Odkąd jesteś w moim życiu, nawet zwykłe dni
+      potrafią stać się wyjątkowe.
+    </p>
+    <p>
+      Uwielbiam Twój uśmiech, nasze rozmowy
+      i każdą wspólną chwilę.
+      Przy Tobie mogę być po prostu sobą.
+    </p>
+    <p>
+      Chcę tworzyć z Tobą kolejne wspomnienia,
+      śmiać się z małych rzeczy i być przy Tobie,
+      kiedy tego potrzebujesz.
+    </p>
+    <p>
+      Dziękuję Ci za to, że jesteś.
+      Kocham Cię! ❤️
+    </p>
+    <p>Twój chłopak 💗</p>
+  </div>
+</section>
+
+<footer>Stworzone z miłości ❤️ • Nasza historia</footer>
+
+<script>
+function openLetter() {
+  const letter = document.getElementById("list");
+  letter.style.display =
+    letter.style.display === "block" ? "none" : "block";
+}
+
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.textContent = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 9000);
+}, 700);
+</script>
+
+</body>
+</html>
